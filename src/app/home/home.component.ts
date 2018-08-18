@@ -12,9 +12,6 @@ export class HomeComponent implements OnInit {
   myTemplate;
 
   constructor(http: Http) {
-
-    http.get('../../assets/grafo.html')
-      .pipe(map((html: any) => this.myTemplate = html._body)).subscribe(res => console.log(res));
   }
 
 

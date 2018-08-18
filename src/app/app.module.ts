@@ -1,3 +1,4 @@
+import { SafePipe } from './safepipe';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -19,7 +20,8 @@ import { DeputadosComponent } from './deputados/deputados.component';
   declarations: [
     AppComponent,
     HomeComponent,
-    DeputadosComponent
+    DeputadosComponent,
+    SafePipe
   ],
   imports: [
     BrowserModule,
