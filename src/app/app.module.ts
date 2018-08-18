@@ -1,28 +1,47 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AppRoutingModule } from './app.routing.module';
 
-import { D3Service, D3_DIRECTIVES } from './d3';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
 
 import { AppComponent } from './app.component';
 
-import { GraphComponent } from './visuals/graph/graph.component';
-import { SHARED_VISUALS } from './visuals/shared';
+import { HomeComponent } from './home/home.component';
+import { DeputadosComponent } from './deputados/deputados.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    GraphComponent,
-    ...SHARED_VISUALS,
-    ...D3_DIRECTIVES
+    HomeComponent,
+    DeputadosComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    HttpClientModule,
+    BrowserModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    AppRoutingModule,
   ],
-  providers: [D3Service],
+  exports: [
+    BrowserModule,
+    HttpClientModule,
+    HttpClientModule,
+    FormsModule,
+    AppRoutingModule,
+  ],
+
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
