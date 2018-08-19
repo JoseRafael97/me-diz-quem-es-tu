@@ -1,64 +1,35 @@
-
-
 <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-    <h3> Saiba mais sobre o que seu candidato lendo sobre o que ele está falando!.</h3>
-  </div>
-  <div class="container" style="background: #f1f1f1">
-    <form class="form-inline my-2 my-lg-0 text-center">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
-    <br>
+  <h3> Saiba mais sobre o que seu candidato lendo sobre o que ele está falando!.</h3>
+</div>
+<div class="container" style="background: #f1f1f1">
+  <ng-select [items]="listaDeputados"
+              bindLabel="nome"
+              [clearSearchOnAdd]="true"
+              bindValue="nome"
+              (change)= "onChangeLista($event, selectedCityName)"
+              (clear)	= "onRestartLista()"
+              (click)="onSelectParlamentar($event, selectedCityName)"
+              placeholder="Busque o parlamentar"
+              [(ngModel)]="selectedCityName">
+      <ng-template ng-label-tmp let-item="item">
+          <b>{{item.nome}}</b>
+      </ng-template>
+  </ng-select>
+
+  <br>
+  <div *ngFor="let parlamentar of listaDeputados; let i=index " (onSelectionChange)="onSelectParlamentar($event, selectedCityName)">
     <div class="card-deck mb-3 text-center">
-      <div class="card mb-3 box-shadow">
-        <div class="card-header">
-          <h4 class="my-0 font-weight-normal">Eduardo Barbosa </h4>
-        </div>
-        <div class="card-body">
-          <img style="margin-bottom: 10px" src="http://www.camara.leg.br/internet/deputado/bandep/178957.jpg">
-
-          <button type="button" class="btn btn-lg btn-block btn-outline-primary">Discursos</button>
-        </div>
-      </div>
       <div class="card mb-4 box-shadow">
         <div class="card-header">
-          <h4 class="my-0 font-weight-normal">Eduardo Barbosa </h4>
+          <h4 class="my-0 font-weight-normal">{{parlamentar.nome}}</h4>
         </div>
         <div class="card-body">
-          <img style="margin-bottom: 10px" src="http://www.camara.leg.br/internet/deputado/bandep/178957.jpg">
+          <img style="margin-bottom: 10px" [src]="parlamentar.urlFoto">
 
-          <button type="button" class="btn btn-lg btn-block btn-outline-primary">Discursos</button>
-        </div>
-      </div>
-      <div class="card mb-4 box-shadow">
-        <div class="card-header">
-          <h4 class="my-0 font-weight-normal">Eduardo Barbosa </h4>
-        </div>
-        <div class="card-body">
-          <img style="margin-bottom: 10px" src="http://www.camara.leg.br/internet/deputado/bandep/178957.jpg">
-
-          <button type="button" class="btn btn-lg btn-block btn-outline-primary">Discursos</button>
-        </div>
-      </div>
-      <div class="card mb-4 box-shadow">
-        <div class="card-header">
-          <h4 class="my-0 font-weight-normal">Eduardo Barbosa </h4>
-        </div>
-        <div class="card-body">
-          <img style="margin-bottom: 10px" src="http://www.camara.leg.br/internet/deputado/bandep/178957.jpg">
-
-          <button type="button" class="btn btn-lg btn-block btn-outline-primary">Discursos</button>
-        </div>
-      </div>
-      <div class="card mb-4 box-shadow">
-        <div class="card-header">
-          <h4 class="my-0 font-weight-normal">Eduardo Barbosa </h4>
-        </div>
-        <div class="card-body">
-          <img style="margin-bottom: 10px" src="http://www.camara.leg.br/internet/deputado/bandep/178957.jpg">
-
-          <button type="button" class="btn btn-lg btn-block btn-outline-primary">Discursos</button>
+          <a [routerLink]="['detalhes', parlamentar.nome]" type="button" class="btn btn-lg btn-block btn-outline-primary">Mais detalhes</a>
         </div>
       </div>
 
     </div>
+  </div>
+</div>

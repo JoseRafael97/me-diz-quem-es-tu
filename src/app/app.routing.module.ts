@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { HomeComponent } from './home/home.component';
 import { DeputadosComponent } from './deputados/deputados.component';
+import { DiscursoPalarmentarComponent } from './discurso-palarmentar/discurso-palarmentar.component';
 
 
 
@@ -11,6 +12,9 @@ const appRoutes: Routes = [
   { path: '', component: HomeComponent},
 
   { path: 'deputadodiscurso', component: DeputadosComponent},
+
+  { path: 'deputadodiscurso/detalhes/:nome', component: DiscursoPalarmentarComponent},
+
 
   { path: '', redirectTo: '/', pathMatch: 'full' },
 ];
