@@ -9,11 +9,9 @@ import { DiscursoPalarmentarComponent } from './discurso-palarmentar/discurso-pa
 
 const appRoutes: Routes = [
 
-  { path: '', component: HomeComponent},
+  { path: '', component: DeputadosComponent},
 
-  { path: 'deputadodiscurso', component: DeputadosComponent},
-
-  { path: 'deputadodiscurso/detalhes/:nome', component: DiscursoPalarmentarComponent},
+  { path: 'parlamentar/detalhes/:nome', component: DiscursoPalarmentarComponent},
 
 
   { path: '', redirectTo: '/', pathMatch: 'full' },

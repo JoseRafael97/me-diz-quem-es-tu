@@ -15,11 +15,7 @@ export class AppService {
     return this.http.get('../assets/deputados.json');
   }
 
-
-  public getDiscursos(): Observable<any> {
-    return this.http.get('../assets/discursos.json');
+  public getDiscursos(nome: string): Observable<any> {
+    return this.http.get('../assets/discursos/' + nome + '.json');
   }
-
-
-
 }

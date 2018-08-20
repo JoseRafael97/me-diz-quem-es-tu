@@ -7,6 +7,8 @@
   color: #f9f9f9 !important;
 }
 
+
+
 .text-dark {
   color: white !important
 }
@@ -85,7 +87,7 @@
 .open>.dropdown-toggle.btn-outline-success {
   border-color: rgb(255, 187, 0) !important;
   color: #fff !important;
-  background-color: #4b0948 !important;
+  background-color: rgb(143, 83, 162) !important;
 }
 
 .btn-outline-primary:hover,

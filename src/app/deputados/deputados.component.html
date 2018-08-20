@@ -1,8 +1,8 @@
-<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-  <h3> Saiba mais sobre o que seu candidato lendo sobre o que ele está falando!.</h3>
+<div style="color: #4b0948 !important" class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+  <h3> Conheça mais seu deputado.</h3>
 </div>
 <div class="container" style="background: #f1f1f1">
-  <ng-select [items]="listaDeputados"
+  <ng-select style="color: #4b0948 !important"  [items]="listaDeputados"
               bindLabel="nome"
               [clearSearchOnAdd]="true"
               bindValue="nome"
@@ -17,16 +17,16 @@
   </ng-select>
 
   <br>
-  <div *ngFor="let parlamentar of listaDeputados; let i=index " (onSelectionChange)="onSelectParlamentar($event, selectedCityName)">
+  <div style="color: #4b0948 !important"  *ngFor="let parlamentar of listaDeputados; let i=index " (onSelectionChange)="onSelectParlamentar($event, selectedCityName)">
+
     <div class="card-deck mb-3 text-center">
       <div class="card mb-4 box-shadow">
         <div class="card-header">
-          <h4 class="my-0 font-weight-normal">{{parlamentar.nome}}</h4>
+          <h4 style="color: #4b0948 !important"  class="my-0 font-weight-normal">{{parlamentar.nome}}</h4>
         </div>
         <div class="card-body">
-          <img style="margin-bottom: 10px" [src]="parlamentar.urlFoto">
-
-          <a [routerLink]="['detalhes', parlamentar.nome]" type="button" class="btn btn-lg btn-block btn-outline-primary">Mais detalhes</a>
+          <img [src]="parlamentar.urlFoto" alt="" class="clip-circle" style="margin-bottom: 10px">
+          <button [routerLink]="['parlamentar/detalhes', parlamentar.nome]" type="button" class="btn btn-lg btn-block btn-outline-primary">Mais detalhes</button>
         </div>
       </div>
 

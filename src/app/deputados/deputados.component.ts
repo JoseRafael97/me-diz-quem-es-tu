@@ -49,9 +49,6 @@ export class DeputadosComponent implements OnInit {
   onChangeLista($event, parlamentar) {
     if (parlamentar !== undefined) {
       this.listaDeputados = [];
-
-      console.log(this.listaDeputados);
-
       this.listaDeputados.push(this.filterParlamentar(parlamentar)[0]);
     }
   }
