@@ -12,7 +12,7 @@ export class DeputadosComponent implements OnInit {
   reader: any;
   listaDeputados = [];
   listaDeputadosOrige = [];
-
+  selectedCityName;
 
 
   constructor(http: Http, private appService: AppService) {
@@ -35,9 +35,6 @@ export class DeputadosComponent implements OnInit {
   public onSelectParlamentar(event, parlamentar) {
     if (parlamentar !== undefined) {
       this.listaDeputados = [];
-
-      console.log(this.listaDeputados);
-
       this.listaDeputados.push(this.filterParlamentar(parlamentar)[0]);
     }
   }
